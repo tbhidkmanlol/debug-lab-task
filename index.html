@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="assets/img/favicon.ico?updated=2904202401" />
+    <title>Debug Lab | Skill Learning Center</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800;900&display=swap" />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" />
+    <style type="text/tailwindcss">
+        :root {
+        --brand-orange: #ff6b00;
+      }
+
+      body {
+        font-family: "Outfit", sans-serif;
+      }
+
+      .nav-dropdown {
+        transform: translateY(10px);
+        transition: all 0.2s ease-out;
+      }
+
+      .group:hover .nav-dropdown {
+        transform: translateY(0);
+        opacity: 1;
+        visibility: visible;
+      }
+
+      #mobile-programs-toggle:checked ~ #mobile-programs-submenu {
+        max-height: 400px;
+        opacity: 1;
+        margin-top: 0.5rem;
+      }
+
+      #mobile-programs-toggle:checked ~ label .chevron-icon {
+        transform: rotate(90deg);
+      }
+    </style>
+    <script id="tailwind-config">
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: "#FF6B00",
+                        "primary-dark": "#E66000",
+                        "primary-light": "#FFF0E6",
+                        "neutral-dark": "#1A1D23",
+                        "neutral-light": "#F8F9FA",
+                    },
+                },
+            },
+        };
+    </script>
+</head>
+
+<body class="bg-white text-neutral-dark">
+    <input class="hidden peer" id="mobile-menu-toggle" type="checkbox" />
+
+    <label for="mobile-menu-toggle" id="mobile-overlay" aria-label="Close mobile menu"
+        class="fixed inset-0 bg-neutral-dark/40 backdrop-blur-sm z-[60] opacity-0 pointer-events-none transition-opacity duration-300 peer-checked:opacity-100 peer-checked:pointer-events-auto"></label>
+
+    <aside id="mobile-drawer"
+        class="fixed top-0 left-0 bottom-0 w-[85%] max-w-sm bg-white z-[70] shadow-2xl transition-transform duration-300 -translate-x-full overflow-y-auto peer-checked:translate-x-0">
+        <div class="p-6 flex flex-col h-full">
+            <div class="flex items-center justify-between mb-10">
+                <a href="index.html" aria-label="Debug Lab home">
+                    <div class="flex items-center gap-3">
+                        <div class="size-9 bg-primary flex items-center justify-center rounded-lg">
+                            <span class="material-symbols-outlined text-white text-xl">code_blocks</span>
+                        </div>
+                        <div class="flex flex-col">
+                            <p class="text-lg font-black tracking-tight leading-none text-neutral-dark">
+                                DEBUG <span class="text-primary">LAB</span>
+                            </p>
+                            <span class="text-[8px] uppercase tracking-widest font-bold text-primary">SKILL LEARNING
+                                CENTER</span>
+                        </div>
+                    </div>
+                </a>
+                <label class="p-2 cursor-pointer" for="mobile-menu-toggle">
+                    <span class="material-symbols-outlined text-neutral-dark">close</span>
+                </label>
+            </div>
+
+            <nav class="flex-1 flex flex-col gap-2" aria-label="Mobile">
+                <div class="flex flex-col">
+                    <input class="hidden" id="mobile-programs-toggle" type="checkbox" />
+                    <label
+                        class="flex items-center justify-between w-full py-4 px-2 text-base font-bold text-neutral-dark cursor-pointer"
+                        for="mobile-programs-toggle">
+                        Programs
+                        <span
+                            class="material-symbols-outlined text-gray-400 chevron-icon transition-transform duration-300">chevron_right</span>
+                    </label>
+                    <div id="mobile-programs-submenu"
+                        class="max-h-0 overflow-hidden opacity-0 transition-all duration-300 flex flex-col gap-1 pl-4 border-l-2 border-primary-light">
+                        <a class="flex items-center gap-3 py-3 px-3 rounded-xl hover:bg-primary-light group transition-colors"
+                            href="#">
+                            <span class="material-symbols-outlined text-primary text-xl">precision_manufacturing</span>
+                            <span class="text-sm font-bold text-neutral-dark group-hover:text-primary">Holiday
+                                Workshop</span>
+                        </a>
+                        <a class="flex items-center gap-3 py-3 px-3 rounded-xl hover:bg-primary-light group transition-colors"
+                            href="software-development.html">
+                            <span class="material-symbols-outlined text-primary text-xl">code</span>
+                            <span class="text-sm font-bold text-neutral-dark group-hover:text-primary">Software
+                                Development</span>
+                        </a>
+                        <a class="flex items-center gap-3 py-3 px-3 rounded-xl hover:bg-primary-light group transition-colors"
+                            href="stem-workshop.html">
+                            <span class="material-symbols-outlined text-primary text-xl">science</span>
+                            <span class="text-sm font-bold text-neutral-dark group-hover:text-primary">STEM
+                                Workshops</span>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="flex flex-col">
+                    <a class="py-4 px-2 text-base font-bold text-neutral-dark"
+                        href="coder/marketplace.php">Marketplace</a>
+                    <a class="py-4 px-2 text-base font-bold text-neutral-dark" href="coder/walloffame.php">Wall of
+                        Fame</a>
+                    <a class="py-4 px-2 text-base font-bold text-neutral-dark"
+                        href="coder/leaderboard.php">Leaderboard</a>
+                </div>
+            </nav>
+
+            <div class="mt-auto pt-8 flex flex-col gap-4">
+                <a class="text-sm font-bold text-center text-neutral-dark hover:text-primary py-2"
+                    href="coach/login.php">Coaches</a>
+                <a href="search.php">
+                    <button
+                        class="w-full bg-primary hover:bg-primary-dark text-white py-4 rounded-xl text-base font-black transition-all shadow-lg shadow-primary/20 uppercase tracking-wider">
+                        Student
+                    </button>
+                </a>
+            </div>
+        </div>
+    </aside>
+
+    <header class="fixed top-0 w-full z-50 bg-white/95 backdrop-blur-md border-b border-gray-100">
+        <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+            <a href="index.html" aria-label="Debug Lab home">
+                <div class="flex items-center gap-3">
+                    <div
+                        class="size-10 bg-primary flex items-center justify-center rounded-lg shadow-lg shadow-primary/20">
+                        <span class="material-symbols-outlined text-white text-2xl">code_blocks</span>
+                    </div>
+                    <div class="flex flex-col">
+                        <p class="text-xl font-black tracking-tight leading-none text-neutral-dark">
+                            DEBUG <span class="text-primary">LAB</span>
+                        </p>
+                        <span class="text-[10px] uppercase tracking-widest font-bold text-primary">SKILL LEARNING
+                            CENTER</span>
+                    </div>
+                </div>
+            </a>
+
+            <nav class="hidden md:flex items-center gap-8 h-full" aria-label="Primary">
+                <div class="relative group h-full flex items-center">
+                    <a class="text-sm font-bold text-neutral-dark group-hover:text-primary transition-colors flex items-center gap-1"
+                        href="#">
+                        Programs
+                        <span
+                            class="material-symbols-outlined text-[18px] transition-transform group-hover:rotate-180">expand_more</span>
+                    </a>
+                    <div
+                        class="nav-dropdown absolute top-[75px] left-0 w-72 bg-white rounded-2xl shadow-xl border border-gray-100 opacity-0 invisible z-50 py-3">
+                        <a class="flex items-center gap-4 px-5 py-3 hover:bg-primary-light group/item transition-colors"
+                            href="#">
+                            <div
+                                class="size-10 rounded-xl bg-primary/10 text-primary flex items-center justify-center group-hover/item:bg-primary group-hover/item:text-white transition-all">
+                                <span class="material-symbols-outlined text-xl">precision_manufacturing</span>
+                            </div>
+                            <span
+                                class="text-sm font-bold text-neutral-dark group-hover/item:text-primary transition-colors">Holiday
+                                Workshop</span>
+                        </a>
+                        <a class="flex items-center gap-4 px-5 py-3 hover:bg-primary-light group/item transition-colors"
+                            href="software-development.html">
+                            <div
+                                class="size-10 rounded-xl bg-primary/10 text-primary flex items-center justify-center group-hover/item:bg-primary group-hover/item:text-white transition-all">
+                                <span class="material-symbols-outlined text-xl">code</span>
+                            </div>
+                            <span
+                                class="text-sm font-bold text-neutral-dark group-hover/item:text-primary transition-colors">Software
+                                Development</span>
+                        </a>
+                        <a class="flex items-center gap-4 px-5 py-3 hover:bg-primary-light group/item transition-colors"
+                            href="stem-workshop.html">
+                            <div
+                                class="size-10 rounded-xl bg-primary/10 text-primary flex items-center justify-center group-hover/item:bg-primary group-hover/item:text-white transition-all">
+                                <span class="material-symbols-outlined text-xl">science</span>
+                            </div>
+                            <span
+                                class="text-sm font-bold text-neutral-dark group-hover/item:text-primary transition-colors">STEM
+                                Workshops</span>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="relative group h-full flex items-center">
+                    <a class="text-sm font-bold text-neutral-dark group-hover:text-primary transition-colors flex items-center gap-1"
+                        href="#">
+                        Events
+                        <span
+                            class="material-symbols-outlined text-[18px] transition-transform group-hover:rotate-180">expand_more</span>
+                    </a>
+                    <div
+                        class="nav-dropdown absolute top-[75px] left-0 w-64 bg-white rounded-2xl shadow-xl border border-gray-100 opacity-0 invisible z-50 py-3">
+                        <a class="flex items-center gap-4 px-5 py-3 hover:bg-primary-light group/item transition-colors"
+                            href="#">
+                            <div
+                                class="size-10 rounded-xl bg-primary/10 text-primary flex items-center justify-center group-hover/item:bg-primary group-hover/item:text-white transition-all">
+                                <span class="material-symbols-outlined text-xl">calendar_month</span>
+                            </div>
+                            <span
+                                class="text-sm font-bold text-neutral-dark group-hover/item:text-primary transition-colors">Upcoming
+                                Events</span>
+                        </a>
+                        <a class="flex items-center gap-4 px-5 py-3 hover:bg-primary-light group/item transition-colors"
+                            href="#">
+                            <div
+                                class="size-10 rounded-xl bg-primary/10 text-primary flex items-center justify-center group-hover/item:bg-primary group-hover/item:text-white transition-all">
+                                <span class="material-symbols-outlined text-xl">trophy</span>
+                            </div>
+                            <span
+                                class="text-sm font-bold text-neutral-dark group-hover/item:text-primary transition-colors">Competitions</span>
+                        </a>
+                    </div>
+                </div>
+
+                <a class="text-sm font-bold text-neutral-dark hover:text-primary transition-colors"
+                    href="coder/marketplace.php">Marketplace</a>
+                <a class="text-sm font-bold text-neutral-dark hover:text-primary transition-colors"
+                    href="coder/walloffame.php">Wall of Fame</a>
+                <a class="text-sm font-bold text-neutral-dark hover:text-primary transition-colors"
+                    href="coder/leaderboard.php">Leaderboard</a>
+            </nav>
+
+            <div class="flex items-center gap-4">
+                <a href="coach/login.php">
+                    <button
+                        class="hidden sm:block text-sm font-bold text-neutral-dark px-4 hover:text-primary transition-colors">Coaches</button>
+                </a>
+                <a href="search.php">
+                    <button
+                        class="bg-primary hover:bg-primary-dark text-white px-6 py-3 rounded-lg text-sm font-extrabold transition-all active:scale-95 shadow-md">Student</button>
+                </a>
+                <label class="md:hidden flex items-center justify-center p-2 text-neutral-dark cursor-pointer"
+                    for="mobile-menu-toggle">
+                    <span class="material-symbols-outlined text-3xl">menu</span>
+                </label>
+            </div>
+        </div>
+    </header>
+
+    <main class="pt-20">
+        <section class="bg-neutral-light">
+            <div class="max-w-7xl mx-auto px-6 py-20">
+                <div class="max-w-3xl">
+                    <p class="text-primary font-black uppercase tracking-widest text-xs mb-4">Base Template</p>
+                    <h1 class="text-4xl md:text-5xl font-black tracking-tight text-neutral-dark mb-6">Base Template:
+                        Header and Footer</h1>
+                    <p class="text-gray-600 text-lg leading-relaxed">
+                        This page is a base template for your website. It includes a header and footer that are cleaned
+                        and ready to use.
+                    </p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-neutral-dark pt-24 pb-12 text-white">
+        <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-20">
+            <div>
+                <div class="flex items-center gap-3 mb-8">
+                    <div class="size-8 bg-primary flex items-center justify-center rounded-lg">
+                        <span class="material-symbols-outlined text-white text-lg">terminal</span>
+                    </div>
+                    <h3 class="text-lg font-black tracking-tight">DEBUG <span class="text-primary">LAB</span></h3>
+                </div>
+                <p class="text-gray-400 text-sm leading-relaxed mb-8">
+                    Debug Lab is a skill learning center for children aged 7-17 to come together to learn, train and
+                    master their skills in Technology for better future since 2018.
+                </p>
+                <div class="flex gap-4">
+                    <a class="size-10 rounded-xl bg-white/5 flex items-center justify-center hover:bg-primary transition-all text-white"
+                        href="#"><span class="material-symbols-outlined text-lg">public</span></a>
+                    <a class="size-10 rounded-xl bg-white/5 flex items-center justify-center hover:bg-primary transition-all text-white"
+                        href="#"><span class="material-symbols-outlined text-lg">videocam</span></a>
+                    <a class="size-10 rounded-xl bg-white/5 flex items-center justify-center hover:bg-primary transition-all text-white"
+                        href="#"><span class="material-symbols-outlined text-lg">alternate_email</span></a>
+                </div>
+            </div>
+
+            <div>
+                <h4 class="text-primary font-black uppercase text-xs tracking-widest mb-8">Programs</h4>
+                <ul class="space-y-4 text-sm text-gray-400 font-bold">
+                    <li><a class="hover:text-primary transition-colors" href="#">Robotics Engineering</a></li>
+                    <li><a class="hover:text-primary transition-colors" href="#">Python Programming</a></li>
+                    <li><a class="hover:text-primary transition-colors" href="#">Web Development</a></li>
+                    <li><a class="hover:text-primary transition-colors" href="#">AI &amp; Data Science</a></li>
+                </ul>
+            </div>
+
+            <div>
+                <h4 class="text-primary font-black uppercase text-xs tracking-widest mb-8">Quick Links</h4>
+                <ul class="space-y-4 text-sm text-gray-400 font-bold">
+                    <li><a class="hover:text-primary transition-colors" href="#">Our Coaches</a></li>
+                    <li><a class="hover:text-primary transition-colors" href="#">Upcoming Events</a></li>
+                    <li><a class="hover:text-primary transition-colors" href="#">Holiday Camps</a></li>
+                    <li><a class="hover:text-primary transition-colors" href="#">Parent Portal</a></li>
+                </ul>
+            </div>
+
+            <div>
+                <h4 class="text-primary font-black uppercase text-xs tracking-widest mb-8">Get In Touch</h4>
+                <ul class="space-y-4 text-sm text-gray-400 font-bold">
+                    <li class="flex items-start gap-3">
+                        <span class="material-symbols-outlined text-primary">location_on</span>
+                        <span>Debug Lab Skills Learning Centre <br />5-1, Jalan Metro Avenue 1,<br />Metro Avenue, 43000
+                            Kajang,<br />Selangor</span>
+                    </li>
+                    <li class="flex items-center gap-3">
+                        <span class="material-symbols-outlined text-primary">call</span>
+                        <span>+6012 765 1253</span>
+                    </li>
+                    <li class="flex items-center gap-3">
+                        <span class="material-symbols-outlined text-primary">mail</span>
+                        <span>debuglab.coach@gmail.com</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div
+            class="max-w-7xl mx-auto px-6 pt-10 border-t border-white/5 text-center text-gray-500 text-xs font-bold uppercase tracking-widest">
+            <p>� 2026 THE DEBUG LAB EDUCATION. ALL RIGHTS RESERVED.</p>
+        </div>
+    </footer>
+</body>
+
+</html>

@@ -5,41 +5,48 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Software Development | Debug Lab</title>
-    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+
+    <!-- 1. Fetch Google Fonts FIRST so the font families exist in the browser -->
     <link rel="stylesheet"
         href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800;900&display=swap" />
     <link rel="stylesheet"
         href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" />
+
+    <!-- 2. Load Tailwind CDN next -->
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+
     <style type="text/tailwindcss">
         :root {
-        --brand-orange: #ff6b00;
-      }
+            --brand-orange: #ff6b00;
+        }
 
-      body {
-        font-family: "Outfit", sans-serif;
-      }
+        /* Standard baseline override just to be safe */
+        body {
+            font-family: "Outfit", sans-serif;
+        }
 
-      .nav-dropdown {
-        transform: translateY(10px);
-        transition: all 0.2s ease-out;
-      }
+        .nav-dropdown {
+            transform: translateY(10px);
+            transition: all 0.2s ease-out;
+        }
 
-      .group:hover .nav-dropdown {
-        transform: translateY(0);
-        opacity: 1;
-        visibility: visible;
-      }
+        .group:hover .nav-dropdown {
+            transform: translateY(0);
+            opacity: 1;
+            visibility: visible;
+        }
 
-      #mobile-programs-toggle:checked ~ #mobile-programs-submenu {
-        max-height: 400px;
-        opacity: 1;
-        margin-top: 0.5rem;
-      }
+        #mobile-programs-toggle:checked ~ #mobile-programs-submenu {
+            max-height: 400px;
+            opacity: 1;
+            margin-top: 0.5rem;
+        }
 
-      #mobile-programs-toggle:checked ~ label .chevron-icon {
-        transform: rotate(90deg);
-      }
+        #mobile-programs-toggle:checked ~ label .chevron-icon {
+            transform: rotate(90deg);
+        }
     </style>
+
     <script id="tailwind-config">
         tailwind.config = {
             theme: {
@@ -51,6 +58,23 @@
                         "neutral-dark": "#1A1D23",
                         "neutral-light": "#F8F9FA",
                     },
+                    fontFamily: {
+                        sans: ["Outfit", "sans-serif"],
+                    },
+                    keyframes: {
+                        fadeInUp: {
+                            '0%': { opacity: '0', transform: 'translateY(40px)' },
+                            '100%': { opacity: '1', transform: 'translateY(0)' },
+                        },
+                        fadeInLeft: {
+                            '0%': { opacity: '0', transform: 'translateX(-24px)' },
+                            '100%': { opacity: '1', transform: 'translateX(0)' },
+                        }
+                    },
+                    animation: {
+                        'fade-in-up': 'fadeInUp 1.2s cubic-bezier(0.16, 1, 0.3, 1) forwards',
+                        'fade-in-left': 'fadeInLeft 1.2s cubic-bezier(0.16, 1, 0.3, 1) forwards',
+                    }
                 },
             },
         };
@@ -73,7 +97,7 @@
                             <span class="material-symbols-outlined text-white text-xl">code_blocks</span>
                         </div>
                         <div class="flex flex-col">
-                            <p class="text-lg font-black tracking-tight leading-none text-neutral-dark">
+                            <p class="text-lg font-900 tracking-tight leading-none text-neutral-dark">
                                 DEBUG <span class="text-primary">LAB</span>
                             </p>
                             <span class="text-[8px] uppercase tracking-widest font-bold text-primary">SKILL LEARNING
@@ -134,7 +158,7 @@
                     href="coach/login.php">Coaches</a>
                 <a href="search.php">
                     <button
-                        class="w-full bg-primary hover:bg-primary-dark text-white py-4 rounded-xl text-base font-black transition-all shadow-lg shadow-primary/20 uppercase tracking-wider">
+                        class="w-full bg-primary hover:bg-primary-dark text-white py-4 rounded-xl text-base font-900 transition-all shadow-lg shadow-primary/20 uppercase tracking-wider">
                         Student
                     </button>
                 </a>
@@ -151,7 +175,7 @@
                         <span class="material-symbols-outlined text-white text-2xl">code_blocks</span>
                     </div>
                     <div class="flex flex-col">
-                        <p class="text-xl font-black tracking-tight leading-none text-neutral-dark">
+                        <p class="text-xl font-900 tracking-tight leading-none text-neutral-dark">
                             DEBUG <span class="text-primary">LAB</span>
                         </p>
                         <span class="text-[10px] uppercase tracking-widest font-bold text-primary">SKILL LEARNING
@@ -262,10 +286,10 @@
         <section class="bg-neutral-light">
             <div class="max-w-7xl mx-auto px-6 py-20 lg:py-28">
                 <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-                    <div>
-                        <p class="text-primary font-black uppercase tracking-widest text-xs mb-4">Software Development
+                    <div class="animate-fade-in-left">
+                        <p class="text-primary font-900 uppercase tracking-widest text-xs mb-4">Software Development
                         </p>
-                        <h1 class="text-4xl md:text-6xl font-black tracking-tight text-neutral-dark mb-6">Build, Create,
+                        <h1 class="text-4xl md:text-6xl font-900 tracking-tight text-neutral-dark mb-6">Build, Create,
                             and Launch with Code</h1>
                         <p class="text-gray-600 text-lg leading-relaxed max-w-2xl">
                             Our software development tracks help learners aged 7-17 move from coding basics to building
@@ -287,65 +311,141 @@
 
                         <div class="mt-10 flex flex-wrap gap-4">
                             <a href="https://forms.gle/2V9yJhV2zKYsVjnz5" target="_blank" rel="noopener noreferrer"
-                                class="inline-flex items-center justify-center gap-3 w-full sm:w-auto min-w-[220px] h-14 px-6 bg-primary text-white font-black rounded-xl text-lg hover:bg-primary-dark hover:shadow-xl transition-all">
+                                class="inline-flex items-center justify-center gap-3 w-full sm:w-auto min-w-[220px] h-14 px-6 bg-primary text-white font-900 rounded-xl text-lg hover:bg-primary-dark hover:shadow-xl transition-all">
                                 Book a Free Trial
                                 <span class="material-symbols-outlined font-bold"
                                     aria-hidden="true">arrow_forward</span>
                             </a>
                             <a href="https://wasap.my/60127651253" target="_blank" rel="noopener noreferrer"
-                                class="inline-flex items-center justify-center w-full sm:w-auto min-w-[220px] h-14 px-6 bg-white border-2 border-primary text-primary font-black rounded-xl text-lg hover:bg-primary hover:text-white transition-all">
+                                class="inline-flex items-center justify-center w-full sm:w-auto min-w-[220px] h-14 px-6 bg-white border-2 border-primary text-primary font-900 rounded-xl text-lg hover:bg-primary hover:text-white transition-all">
                                 Contact Us
                             </a>
                         </div>
                     </div>
 
-                    <div class="bg-white rounded-3xl border border-gray-100 p-8 shadow-lg">
-                        <h2 class="text-2xl font-black text-neutral-dark mb-4">Track Progression</h2>
-                        <ol class="space-y-4 text-gray-700">
-                            <li class="flex items-start gap-3">
-                                <span
-                                    class="size-7 shrink-0 rounded-full bg-primary text-white text-xs font-black flex items-center justify-center">1</span>
-                                <span>Start with logic, loops, and problem-solving in CS Fundamentals.</span>
-                            </li>
-                            <li class="flex items-start gap-3">
-                                <span
-                                    class="size-7 shrink-0 rounded-full bg-primary text-white text-xs font-black flex items-center justify-center">2</span>
-                                <span>Build interactive scripts and apps with JavaScript Coding.</span>
-                            </li>
-                            <li class="flex items-start gap-3">
-                                <span
-                                    class="size-7 shrink-0 rounded-full bg-primary text-white text-xs font-black flex items-center justify-center">3</span>
-                                <span>Design websites and games, then present projects confidently.</span>
-                            </li>
-                        </ol>
+                    <div class="bg-white rounded-3xl border border-gray-100 p-8 shadow-lg animate-fade-in-up">
+                        <h2 class="text-2xl font-900 text-neutral-dark mb-6">Track Progression</h2>
+                        <div class="space-y-6">
+                            <!-- Level 1 -->
+                            <div class="flex items-start gap-4">
+                                <div
+                                    class="size-10 shrink-0 rounded-xl bg-primary/10 text-primary flex items-center justify-center font-900 text-sm">
+                                    01
+                                </div>
+                                <div>
+                                    <h3 class="text-base font-900 text-neutral-dark uppercase tracking-wider mb-1">
+                                        Beginner Level</h3>
+                                    <p class="text-gray-600 text-sm leading-relaxed">
+                                        Start with visual puzzle blocks, simple logic loops, and basic layouts. Perfect
+                                        for learning how to think step-by-step.
+                                    </p>
+                                </div>
+                            </div>
+
+                            <div class="h-6 border-l-2 border-dashed border-gray-200 ml-5 -my-3"></div>
+
+                            <!-- Level 2 -->
+                            <div class="flex items-start gap-4">
+                                <div
+                                    class="size-10 shrink-0 rounded-xl bg-primary/10 text-primary flex items-center justify-center font-900 text-sm">
+                                    02
+                                </div>
+                                <div>
+                                    <h3 class="text-base font-900 text-neutral-dark uppercase tracking-wider mb-1">
+                                        Intermediate Level</h3>
+                                    <p class="text-gray-600 text-sm leading-relaxed">
+                                        Step up to real text coding. Write scripts that handle basic math, interact with
+                                        user inputs, and power simple buttons.
+                                    </p>
+                                </div>
+                            </div>
+
+                            <div class="h-6 border-l-2 border-dashed border-gray-200 ml-5 -my-3"></div>
+
+                            <!-- Level 3 -->
+                            <div class="flex items-start gap-4">
+                                <div
+                                    class="size-10 shrink-0 rounded-xl bg-primary text-white flex items-center justify-center font-900 text-sm shadow-md">
+                                    03
+                                </div>
+                                <div>
+                                    <h3 class="text-base font-900 text-primary uppercase tracking-wider mb-1">Advanced
+                                        Level</h3>
+                                    <p class="text-gray-600 text-sm leading-relaxed">
+                                        Bring ideas to life by coding custom apps, building multi-level games, and
+                                        polishing projects to share with friends and family.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section class="bg-white py-16">
+        <section class="bg-white py-16 opacity-0 scroll-animate">
             <div class="max-w-7xl mx-auto px-6">
-                <h2 class="text-3xl md:text-4xl font-black tracking-tight text-neutral-dark mb-4">Program Overview</h2>
-                <p class="text-gray-600 leading-relaxed max-w-3xl">
-                    Each track combines instructor-led learning and project-based practice. Learners gain technical
-                    confidence, creative thinking, and communication skills while building portfolios they can proudly
-                    share.
-                </p>
+                <h2 class="text-3xl md:text-4xl font-900 tracking-tight text-neutral-dark mb-12">Program Overview</h2>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <div class="flex gap-4 animate-fade-in-up">
+                        <div
+                            class="size-12 shrink-0 rounded-xl bg-primary/10 text-primary flex items-center justify-center">
+                            <span class="material-symbols-outlined text-2xl" aria-hidden="true">diversity_3</span>
+                        </div>
+                        <div>
+                            <h3 class="text-lg font-900 text-neutral-dark mb-1">Expert Coach Guidance</h3>
+                            <p class="text-gray-600 text-sm leading-relaxed">
+                                Learn directly from friendly tech mentors who guide you step-by-step through tough
+                                puzzles and coding projects.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="flex gap-4 animate-fade-in-up">
+                        <div
+                            class="size-12 shrink-0 rounded-xl bg-primary/10 text-primary flex items-center justify-center">
+                            <span class="material-symbols-outlined text-2xl" aria-hidden="true">layers</span>
+                        </div>
+                        <div>
+                            <h3 class="text-lg font-900 text-neutral-dark mb-1">Project-Based Practice</h3>
+                            <p class="text-gray-600 text-sm leading-relaxed">
+                                No useless memorization. You learn logic completely by building things you actually care
+                                about, like games and apps.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="flex gap-4 animate-fade-in-up">
+                        <div
+                            class="size-12 shrink-0 rounded-xl bg-primary/10 text-primary flex items-center justify-center">
+                            <span class="material-symbols-outlined text-2xl" aria-hidden="true">folder_shared</span>
+                        </div>
+                        <div>
+                            <h3 class="text-lg font-900 text-neutral-dark mb-1">Build Your Own Portfolio</h3>
+                            <p class="text-gray-600 text-sm leading-relaxed">
+                                Collect your best code files into a digital portfolio you can show off to your friends,
+                                family, or use for school.
+                            </p>
+                        </div>
+                    </div>
+                </div>
             </div>
         </section>
 
-        <section class="bg-neutral-light py-16">
+        <section class="bg-neutral-light py-16 opacity-0 scroll-animate">
             <div class="max-w-7xl mx-auto px-6">
-                <h2 class="text-3xl md:text-4xl font-black tracking-tight text-neutral-dark mb-8">Course Tracks</h2>
+                <h2 class="text-3xl md:text-4xl font-900 tracking-tight text-neutral-dark mb-8">Course Tracks</h2>
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
                     <article id="cs" class="bg-white rounded-2xl border border-gray-100 p-6">
                         <div
                             class="size-12 rounded-xl bg-primary/10 text-primary flex items-center justify-center mb-4">
                             <span class="material-symbols-outlined text-2xl" aria-hidden="true">terminal</span>
                         </div>
-                        <p class="text-xs font-black uppercase tracking-widest text-primary mb-2">Ages 8-14</p>
-                        <h3 class="text-xl font-black text-neutral-dark mb-3">CS Fundamentals</h3>
-                        <p class="text-gray-600 mb-4">Discover how to program a computer through coding by creating games and interactive stories and become an expert in a programming language.</p>
+                        <p class="text-xs font-900 uppercase tracking-widest text-primary mb-2">Ages 8-14</p>
+                        <h3 class="text-xl font-900 text-neutral-dark mb-3">CS Fundamentals</h3>
+                        <p class="text-gray-600 mb-4">Discover how to program a computer through coding by creating
+                            games and interactive stories and become an expert in a programming language.</p>
                         <ul class="space-y-2 text-sm text-gray-700 list-disc list-inside">
                             <li>Computational thinking</li>
                             <li>Logic and debugging basics</li>
@@ -357,8 +457,8 @@
                             class="size-12 rounded-xl bg-primary/10 text-primary flex items-center justify-center mb-4">
                             <span class="material-symbols-outlined text-2xl" aria-hidden="true">javascript</span>
                         </div>
-                        <p class="text-xs font-black uppercase tracking-widest text-primary mb-2">Ages 10-16</p>
-                        <h3 class="text-xl font-black text-neutral-dark mb-3">JavaScript Coding</h3>
+                        <p class="text-xs font-900 uppercase tracking-widest text-primary mb-2">Ages 10-16</p>
+                        <h3 class="text-xl font-900 text-neutral-dark mb-3">JavaScript Coding</h3>
                         <p class="text-gray-600 mb-4">Our course combines JavaScript from Beginner to Advanced Level
                             that
                             covered the industrial standards. Learn practical skills for tomorrow's tech world.</p>
@@ -373,8 +473,8 @@
                             class="size-12 rounded-xl bg-primary/10 text-primary flex items-center justify-center mb-4">
                             <span class="material-symbols-outlined text-2xl" aria-hidden="true">web</span>
                         </div>
-                        <p class="text-xs font-black uppercase tracking-widest text-primary mb-2">Ages 6-12</p>
-                        <h3 class="text-xl font-black text-neutral-dark mb-3">Web Design</h3>
+                        <p class="text-xs font-900 uppercase tracking-widest text-primary mb-2">Ages 6-12</p>
+                        <h3 class="text-xl font-900 text-neutral-dark mb-3">Web Design</h3>
                         <p class="text-gray-600 mb-4">Learn to craft stunning, user-friendly websites from scratch. From
                             layout to coding, we'll equip you with the skills to bring your digital visions to life.</p>
                         <ul class="space-y-2 text-sm text-gray-700 list-disc list-inside">
@@ -388,8 +488,8 @@
                             class="size-12 rounded-xl bg-primary/10 text-primary flex items-center justify-center mb-4">
                             <span class="material-symbols-outlined text-2xl" aria-hidden="true">sports_esports</span>
                         </div>
-                        <p class="text-xs font-black uppercase tracking-widest text-primary mb-2">Ages 6-12</p>
-                        <h3 class="text-xl font-black text-neutral-dark mb-3">Game Development</h3>
+                        <p class="text-xs font-900 uppercase tracking-widest text-primary mb-2">Ages 6-12</p>
+                        <h3 class="text-xl font-900 text-neutral-dark mb-3">Game Development</h3>
                         <p class="text-gray-600 mb-4">Dive into coding, design, and storytelling as you craft your own
                             digital adventures. Turn your passion for gaming into a rewarding skillset.</p>
                         <ul class="space-y-2 text-sm text-gray-700 list-disc list-inside">
@@ -402,21 +502,59 @@
             </div>
         </section>
 
-        <section class="py-16 bg-white">
+        <section class="py-16 bg-white opacity-0 scroll-animate">
             <div class="max-w-7xl mx-auto px-6">
-                <h2 class="text-3xl md:text-4xl font-black tracking-tight text-neutral-dark mb-6">What you'll learn</h2>
-                <ul class="grid grid-cols-1 md:grid-cols-3 gap-6 text-gray-700">
-                    <li class="bg-neutral-light p-6 rounded-xl">Write clean code using core syntax, logic, and debugging
-                        strategies.</li>
-                    <li class="bg-neutral-light p-6 rounded-xl">Build and ship practical projects: websites, scripts,
-                        and mini games.</li>
-                    <li class="bg-neutral-light p-6 rounded-xl">Collaborate, explain technical choices, and present
-                        solutions with confidence.</li>
-                </ul>
+                <h2 class="text-3xl md:text-4xl font-900 tracking-tight text-neutral-dark mb-8">What you'll learn</h2>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 text-neutral-dark">
+
+                    <div
+                        class="bg-neutral-light p-8 rounded-2xl border border-gray-100/50 flex flex-col gap-4 transform hover:-translate-y-1 transition-all duration-300">
+                        <div class="size-12 rounded-xl bg-primary/10 text-primary flex items-center justify-center">
+                            <span class="material-symbols-outlined text-2xl" aria-hidden="true">rocket_launch</span>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-900 mb-2">Build Real Stuff</h3>
+                            <p class="text-gray-600 text-sm leading-relaxed">
+                                No boring lectures. You'll jump straight into making games, launching interactive
+                                websites, and writing scripts that actually do things from day one.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div
+                        class="bg-neutral-light p-8 rounded-2xl border border-gray-100/50 flex flex-col gap-4 transform hover:-translate-y-1 transition-all duration-300">
+                        <div class="size-12 rounded-xl bg-primary/10 text-primary flex items-center justify-center">
+                            <span class="material-symbols-outlined text-2xl" aria-hidden="true">extension</span>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-900 mb-2">Think Like a Developer</h3>
+                            <p class="text-gray-600 text-sm leading-relaxed">
+                                Master the puzzle-solving logic behind top apps and games. You'll learn how to hunt down
+                                bugs, fix broken code, and think step-by-step.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div
+                        class="bg-neutral-light p-8 rounded-2xl border border-gray-100/50 flex flex-col gap-4 transform hover:-translate-y-1 transition-all duration-300">
+                        <div class="size-12 rounded-xl bg-primary/10 text-primary flex items-center justify-center">
+                            <span class="material-symbols-outlined text-2xl" aria-hidden="true">grid_view</span>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-900 mb-2">Showcase Your Work</h3>
+                            <p class="text-gray-600 text-sm leading-relaxed">
+                                Create a digital portfolio of cool projects you built yourself. Present your ideas
+                                confidently to coaches, friends, and family.
+                            </p>
+                        </div>
+                    </div>
+
+                </div>
             </div>
         </section>
 
-        <section class="max-w-7xl mx-auto px-6 py-20">
+        <section class="max-w-7xl mx-auto px-6 py-20 opacity-0 scroll-animate">
             <div
                 class="bg-primary rounded-[2.5rem] p-10 lg:p-20 relative overflow-hidden flex flex-col items-center text-center shadow-2xl shadow-primary/30">
                 <div class="absolute top-0 right-0 w-96 h-96 bg-white/10 rounded-full -translate-y-1/2 translate-x-1/2">
@@ -424,8 +562,8 @@
                 <div
                     class="absolute bottom-0 left-0 w-64 h-64 bg-white/5 rounded-full translate-y-1/2 -translate-x-1/2">
                 </div>
-                <h2 class="text-3xl lg:text-5xl font-black text-white mb-6 relative z-10 leading-tight">
-                    Book a Free Trial Class
+                <h2 class="text-3xl lg:text-5xl font-900 text-white mb-6 relative z-10 leading-tight">
+                    Sign Up for Our Trial Class & Let's Code!
                 </h2>
                 <p class="text-white/90 text-lg font-medium mb-10 max-w-2xl relative z-10">
                     Let your child experience a guided coding class with our coaches and discover the right learning
@@ -433,11 +571,11 @@
                 </p>
                 <div class="w-full max-w-lg relative z-10 flex flex-col sm:flex-row gap-4 justify-center">
                     <a href="https://forms.gle/2V9yJhV2zKYsVjnz5" target="_blank" rel="noopener noreferrer"
-                        class="h-14 px-8 bg-neutral-dark text-white font-black rounded-xl hover:bg-black transition-colors shadow-lg uppercase tracking-tighter inline-flex items-center justify-center">
+                        class="h-14 px-8 bg-neutral-dark text-white font-900 rounded-xl hover:bg-black transition-colors shadow-lg uppercase tracking-tighter inline-flex items-center justify-center">
                         Book Free Trial
                     </a>
                     <a href="https://wasap.my/60127651253" target="_blank" rel="noopener noreferrer"
-                        class="h-14 px-8 bg-white text-neutral-dark font-black rounded-xl hover:bg-neutral-light transition-colors shadow-lg uppercase tracking-tighter inline-flex items-center justify-center">
+                        class="h-14 px-8 bg-white text-neutral-dark font-900 rounded-xl hover:bg-neutral-light transition-colors shadow-lg uppercase tracking-tighter inline-flex items-center justify-center">
                         Contact Us
                     </a>
                 </div>
@@ -452,7 +590,7 @@
                     <div class="size-8 bg-primary flex items-center justify-center rounded-lg">
                         <span class="material-symbols-outlined text-white text-lg">terminal</span>
                     </div>
-                    <h3 class="text-lg font-black tracking-tight">DEBUG <span class="text-primary">LAB</span></h3>
+                    <h3 class="text-lg font-900 tracking-tight">DEBUG <span class="text-primary">LAB</span></h3>
                 </div>
                 <p class="text-gray-400 text-sm leading-relaxed mb-8">
                     Debug Lab is a skill learning center for children aged 7-17 to come together to learn, train and
@@ -469,17 +607,19 @@
             </div>
 
             <div>
-                <h4 class="text-primary font-black uppercase text-xs tracking-widest mb-8">Programs</h4>
+                <h4 class="text-primary font-900 uppercase text-xs tracking-widest mb-8">Programs</h4>
                 <ul class="space-y-4 text-sm text-gray-400 font-bold">
-                    <li><a class="hover:text-primary transition-colors" href="stem-workshop.html">Robotics Engineering</a></li>
+                    <li><a class="hover:text-primary transition-colors" href="stem-workshop.html">Robotics
+                            Engineering</a></li>
                     <li><a class="hover:text-primary transition-colors" href="#js">JavaScript Coding</a></li>
-                    <li><a class="hover:text-primary transition-colors" href="software-development.html">Web Development</a></li>
+                    <li><a class="hover:text-primary transition-colors" href="software-development.html">Web
+                            Development</a></li>
                     <li><a class="hover:text-primary transition-colors" href="#game">Game Development</a></li>
                 </ul>
             </div>
 
             <div>
-                <h4 class="text-primary font-black uppercase text-xs tracking-widest mb-8">Quick Links</h4>
+                <h4 class="text-primary font-900 uppercase text-xs tracking-widest mb-8">Quick Links</h4>
                 <ul class="space-y-4 text-sm text-gray-400 font-bold">
                     <li><a class="hover:text-primary transition-colors" href="#">Our Coaches</a></li>
                     <li><a class="hover:text-primary transition-colors" href="#">Upcoming Events</a></li>
@@ -489,7 +629,7 @@
             </div>
 
             <div>
-                <h4 class="text-primary font-black uppercase text-xs tracking-widest mb-8">Get In Touch</h4>
+                <h4 class="text-primary font-900 uppercase text-xs tracking-widest mb-8">Get In Touch</h4>
                 <ul class="space-y-4 text-sm text-gray-400 font-bold">
                     <li class="flex items-start gap-3">
                         <span class="material-symbols-outlined text-primary">location_on</span>
@@ -513,6 +653,34 @@
             <p>&copy; 2026 THE DEBUG LAB EDUCATION. ALL RIGHTS RESERVED.</p>
         </div>
     </footer>
+    <script>
+        // Setup the intersection observer configuration
+        const observerOptions = {
+            root: null, // uses the browser viewport
+            rootMargin: '0px',
+            threshold: 0.15 // triggers when 15% of the section is visible
+        };
+
+        const scrollObserver = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                // If the section enters the screen
+                if (entry.isIntersecting) {
+                    // Inject the Tailwind animation class and reset opacity
+                    entry.target.classList.remove('opacity-0');
+                    entry.target.classList.add('animate-fade-in-up');
+
+                    // Stop watching this element so the animation only runs once
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        // Find all elements marked with our scroll utility class and watch them
+        document.querySelectorAll('.scroll-animate').forEach(element => {
+            scrollObserver.observe(element);
+        });
+    </script>
+</body>
 </body>
 
 </html>

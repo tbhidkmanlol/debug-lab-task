@@ -58,6 +58,13 @@
                         "neutral-dark": "#1A1D23",
                         "neutral-light": "#F8F9FA",
                     },
+                    borderRadius: {
+                        DEFAULT: "0.375rem",
+                        lg: "0.75rem",
+                        xl: "1rem",
+                        "2xl": "1.5rem",
+                        full: "9999px",
+                    },
                     fontFamily: {
                         sans: ["Outfit", "sans-serif"],
                     },
@@ -93,8 +100,9 @@
             <div class="flex items-center justify-between mb-10">
                 <a href="index.html" aria-label="Debug Lab home">
                     <div class="flex items-center gap-3">
-                        <div class="size-9 bg-primary flex items-center justify-center rounded-lg">
-                            <span class="material-symbols-outlined text-white text-xl">code_blocks</span>
+                        <div
+                            class="size-10 bg-primary flex items-center justify-center rounded-lg shadow-lg shadow-primary/20">
+                            <span class="material-symbols-outlined text-white text-2xl">code_blocks</span>
                         </div>
                         <div class="flex flex-col">
                             <p class="text-lg font-900 tracking-tight leading-none text-neutral-dark">
@@ -437,7 +445,9 @@
             <div class="max-w-7xl mx-auto px-6">
                 <h2 class="text-3xl md:text-4xl font-900 tracking-tight text-neutral-dark mb-8">Course Tracks</h2>
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-                    <article id="cs" class="bg-white rounded-2xl border border-gray-100 p-6">
+
+                    <article id="cs"
+                        class="bg-white rounded-2xl border border-gray-100 p-6 transform hover:-translate-y-2 hover:shadow-xl transition-all duration-300">
                         <div
                             class="size-12 rounded-xl bg-primary/10 text-primary flex items-center justify-center mb-4">
                             <span class="material-symbols-outlined text-2xl" aria-hidden="true">terminal</span>
@@ -452,7 +462,9 @@
                             <li>Mini coding challenges</li>
                         </ul>
                     </article>
-                    <article id="js" class="bg-white rounded-2xl border border-gray-100 p-6">
+
+                    <article id="js"
+                        class="bg-white rounded-2xl border border-gray-100 p-6 transform hover:-translate-y-2 hover:shadow-xl transition-all duration-300">
                         <div
                             class="size-12 rounded-xl bg-primary/10 text-primary flex items-center justify-center mb-4">
                             <span class="material-symbols-outlined text-2xl" aria-hidden="true">javascript</span>
@@ -460,15 +472,16 @@
                         <p class="text-xs font-900 uppercase tracking-widest text-primary mb-2">Ages 10-16</p>
                         <h3 class="text-xl font-900 text-neutral-dark mb-3">JavaScript Coding</h3>
                         <p class="text-gray-600 mb-4">Our course combines JavaScript from Beginner to Advanced Level
-                            that
-                            covered the industrial standards. Learn practical skills for tomorrow's tech world.</p>
+                            that covered the industrial standards. Learn practical skills for tomorrow's tech world.</p>
                         <ul class="space-y-2 text-sm text-gray-700 list-disc list-inside">
                             <li>Core JavaScript syntax</li>
                             <li>Interactive web logic</li>
                             <li>Problem-solving under guidance</li>
                         </ul>
                     </article>
-                    <article id="web" class="bg-white rounded-2xl border border-gray-100 p-6">
+
+                    <article id="web"
+                        class="bg-white rounded-2xl border border-gray-100 p-6 transform hover:-translate-y-2 hover:shadow-xl transition-all duration-300">
                         <div
                             class="size-12 rounded-xl bg-primary/10 text-primary flex items-center justify-center mb-4">
                             <span class="material-symbols-outlined text-2xl" aria-hidden="true">web</span>
@@ -483,7 +496,9 @@
                             <li>Team showcase projects</li>
                         </ul>
                     </article>
-                    <article id="game" class="bg-white rounded-2xl border border-gray-100 p-6">
+
+                    <article id="game"
+                        class="bg-white rounded-2xl border border-gray-100 p-6 transform hover:-translate-y-2 hover:shadow-xl transition-all duration-300">
                         <div
                             class="size-12 rounded-xl bg-primary/10 text-primary flex items-center justify-center mb-4">
                             <span class="material-symbols-outlined text-2xl" aria-hidden="true">sports_esports</span>
@@ -498,6 +513,7 @@
                             <li>Project presentation skills</li>
                         </ul>
                     </article>
+
                 </div>
             </div>
         </section>

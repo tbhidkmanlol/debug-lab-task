@@ -2,6 +2,9 @@
 
 Two responsive program pages for [Debug Lab](https://www.thedebuglab.com/debug/), built as part of the technical interview task.
 
+## Live preview
+The integrated layout can be viewed here: https://tbhidkmanlol.github.io/debug-lab-task/index.html
+
 ## Implemented Pages
 
 | Page Target | File Pathway | Description |
@@ -9,9 +12,6 @@ Two responsive program pages for [Debug Lab](https://www.thedebuglab.com/debug/)
 | **Landing Page** | `index.html` | The landing page from the [original site](https://www.thedebuglab.com/debug/). |
 | **Software Development** | `software-development.html` | Showcase Debug Lab's coding & software tracks for kids and teens. |
 | **STEM Workshop** | `stem-workshop.html` | Showcase Debug Lab's hands-on STEM workshops and maker activities. |
-
-## Live preview
-The integrated layout can be viewed here: https://tbhidkmanlol.github.io/debug-lab-task/index.html
 
 ## Tech stack
 
@@ -21,7 +21,7 @@ The integrated layout can be viewed here: https://tbhidkmanlol.github.io/debug-l
 - **Material Symbols** — icons
 
 **Why plain HTML?** 
-- It's simply the fastest and most practical approach for a static two-page expansion task. Keeping it to vanilla HTML avoids over-engineering the codebase and keeps the repository lightweight for evaluation.
+- It's simply the fastest and most practical approach for a static two-page expansion task. Keeping it to vanilla HTML avoids overengineering the codebase and keeps the repository lightweight for evaluation.
 
 ## Key decisions
 

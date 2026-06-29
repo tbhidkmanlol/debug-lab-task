@@ -6,13 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>STEM Workshop | Debug Lab</title>
 
-    <!-- 1. Fetch Google Fonts FIRST so the font families exist in the browser -->
     <link rel="stylesheet"
         href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800;900&display=swap" />
     <link rel="stylesheet"
         href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" />
 
-    <!-- 2. Load Tailwind CDN next -->
     <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
 
     <style type="text/tailwindcss">
@@ -20,7 +18,6 @@
             --brand-orange: #ff6b00;
         }
 
-        /* Standard baseline override just to be safe */
         body {
             font-family: "Outfit", sans-serif;
         }
@@ -288,7 +285,6 @@
     </header>
 
     <main class="pt-20">
-        <!-- Hero Section runs immediately on load -->
         <section class="bg-neutral-light overflow-hidden">
             <div class="max-w-7xl mx-auto px-6 py-20 lg:py-28">
                 <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
@@ -587,21 +583,18 @@
                     class="absolute bottom-0 left-0 w-64 h-64 bg-white/5 rounded-full translate-y-1/2 -translate-x-1/2">
                 </div>
                 <h2 class="text-3xl lg:text-5xl font-900 text-white mb-6 relative z-10 leading-tight">
-                    Join a STEM Trial Workshop
+                    Sign Up for Our Trial Class & Let's Code!
                 </h2>
                 <p class="text-white/90 text-lg font-medium mb-10 max-w-2xl relative z-10">
-                    Give your child a hands-on STEM experience and discover the workshop format that fits best.
-                </p>
-                <div class="w-full max-w-lg relative z-10 flex flex-col sm:flex-row gap-4 justify-center">
-                    <a href="https://forms.gle/2V9yJhV2zKYsVjnz5" target="_blank" rel="noopener noreferrer"
-                        class="h-14 px-8 bg-neutral-dark text-white font-900 rounded-xl hover:bg-black transition-colors shadow-lg uppercase tracking-tighter inline-flex items-center justify-center">
-                        Book Free Trial
-                    </a>
-                    <a href="https://wasap.my/60127651253" target="_blank" rel="noopener noreferrer"
-                        class="h-14 px-8 bg-white text-neutral-dark font-900 rounded-xl hover:bg-neutral-light transition-colors shadow-lg uppercase tracking-tighter inline-flex items-center justify-center">
-                        Contact Us
-                    </a>
-                </div>
+                    Spend 90 minutes to have a chance to discover your child's true potential. Download our official brochure to know more about us. 
+                <form class="w-full max-w-lg relative z-10"
+                    action="https://thedebuglab.com/debug/assets/landing/brochure.pdf" target="_blank">
+                    <button
+                        class="h-16 px-10 bg-neutral-dark text-white font-900 rounded-xl hover:bg-black transition-colors shadow-lg uppercase tracking-tighter"
+                        type="submit">
+                        Download Brochure
+                    </button>
+                </form>
             </div>
         </section>
     </main>

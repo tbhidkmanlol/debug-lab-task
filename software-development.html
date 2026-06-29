@@ -6,13 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Software Development | Debug Lab</title>
 
-    <!-- 1. Fetch Google Fonts FIRST so the font families exist in the browser -->
     <link rel="stylesheet"
         href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800;900&display=swap" />
     <link rel="stylesheet"
         href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" />
 
-    <!-- 2. Load Tailwind CDN next -->
     <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
 
     <style type="text/tailwindcss">
@@ -20,7 +18,6 @@
             --brand-orange: #ff6b00;
         }
 
-        /* Standard baseline override just to be safe */
         body {
             font-family: "Outfit", sans-serif;
         }
@@ -582,18 +579,16 @@
                     Sign Up for Our Trial Class & Let's Code!
                 </h2>
                 <p class="text-white/90 text-lg font-medium mb-10 max-w-2xl relative z-10">
-                    Let your child experience a guided coding class with our coaches and discover the right learning
-                    track.
-                </p>
-                <div class="w-full max-w-lg relative z-10 flex flex-col sm:flex-row gap-4 justify-center">
-                    <a href="https://forms.gle/2V9yJhV2zKYsVjnz5" target="_blank" rel="noopener noreferrer"
-                        class="h-14 px-8 bg-neutral-dark text-white font-900 rounded-xl hover:bg-black transition-colors shadow-lg uppercase tracking-tighter inline-flex items-center justify-center">
-                        Book Free Trial
-                    </a>
-                    <a href="https://wasap.my/60127651253" target="_blank" rel="noopener noreferrer"
-                        class="h-14 px-8 bg-white text-neutral-dark font-900 rounded-xl hover:bg-neutral-light transition-colors shadow-lg uppercase tracking-tighter inline-flex items-center justify-center">
-                        Contact Us
-                    </a>
+                    Spend 90 minutes to have a chance to discover your child's true
+                    potential. Download our official brochure to know more about us.
+                  </p>
+                  <form class="w-full max-w-lg relative z-10" action="https://thedebuglab.com/debug/assets/landing/brochure.pdf" target="_blank">
+                    <button
+                      class="h-16 px-10 bg-neutral-dark text-white font-900 rounded-xl hover:bg-black transition-colors shadow-lg uppercase tracking-tighter"
+                      type="submit">
+                      Download Brochure
+                    </button>
+                  </form>
                 </div>
             </div>
         </section>
@@ -715,8 +710,6 @@
         document.querySelectorAll('.scroll-animate').forEach(element => {
             scrollObserver.observe(element);
         });
-    </script>
+        </script>
 </body>
-</body>
-
 </html>

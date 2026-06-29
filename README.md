@@ -27,7 +27,7 @@ The integrated layout can be viewed here: https://tbhidkmanlol.github.io/debug-l
 ## Key decisions & Enhancements
 
 - **Visual Consistency:** Reused navbar and footer layout structures across all child templates.
-- **Curriculum Symmetry:** Restructured the progression cards on both pages to follow a consistent 3-stage modular template (**Beginner > Intermediate > Advanced** / **Format Breakdown**).
+- **Curriculum Symmetry:** Restructured the progression cards on `software-development.html` to follow a consistent 3-stage modular template (**Beginner > Intermediate > Advanced** / **Format Breakdown**).
 - **Fluid Micro-Animations:** Extended the Tailwind runtime engine configuration with custom translation keyframes to build elegant page-load and scroll-triggered fade entries via a native JavaScript Intersection Observer.
 - **Audience-Focused Copy:** Fine-tuned the descriptive copy to be highly accessible and engaging for kids and parents, removing corporate tech jargon in favor of authentic project milestones.
 - **Functional Integration:** CTAs use matching external links from the live center profiles (Google Forms and WhatsApp channels) to make the live deployment fully interactive.

@@ -3,7 +3,7 @@
 Two responsive program pages for [Debug Lab](https://www.thedebuglab.com/debug/), built as part of the technical interview task.
 
 ## Live preview
-The integrated layout can be viewed here: https://tbhidkmanlol.github.io/debug-lab-task/index.html
+The integrated layout can be viewed here: https://tbhidkmanlol.github.io/debug-lab-task
 
 ## Implemented Pages
 
